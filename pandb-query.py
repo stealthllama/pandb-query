@@ -1,4 +1,5 @@
-#!/usr/bin/env python
+
+# !/usr/bin/env python
 # pandb-query.py -- A script to perform bulk URL lookups using PAN-DB
 #
 # Robert Hagen - Oct 16, 2014
@@ -98,3 +99,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
