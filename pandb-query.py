@@ -1,13 +1,8 @@
-#!/usr/bin/env python
-# pandb-query.py -- A script to perform bulk URL lookups using PAN-DB
-#
-# Robert Hagen - Oct 16, 2014
-#
-# Requires pan.xapi from https://github.com/kevinsteves/pan-python
-
-import sys
 import argparse
 from pan.xapi import *
+
+# TODO Send Bad URLS to different file
+# TODO Output CloudDB as well as local DB definition
 
 
 def make_parser():
@@ -46,18 +41,28 @@ def make_key(username, password, firewall):
 
 
 def get_url(fwconn, url):
-    fwconn.op(cmd="<test><url>%s</url></test>" % url)
+    try:
+        fwconn.op(cmd="<test><url>%s</url></test>" % url)
+    except PanXapiError:
+        print('Bad URL: ', url)
     return fwconn
 
 
 def make_pretty(elem):
-    line = elem.text.split('\n')[1]
-    category = line.split(' ')[1]
-    return category
+    try:
+        result = elem.text.split('\n')
+        local = result[1]
+        cloud = result[2]
+    except AttributeError:
+        return 'not-resolved'
+    local_category = local.split(' ')[1]
+    cloud_category = cloud.split(' ')[1]
+    return local_category, cloud_category
 
 
 def main():
     # Grab the args
+
     myargs = make_parser()
 
     # Open the input file
@@ -81,10 +86,11 @@ def main():
         myconn = make_key(myargs.username, myargs.password, myargs.firewall)
 
     # Iterate through the URL list, perform the lookup, and print the result
+    outfile.write('URL,Local Category,Cloud Category')
     for myurl in infile:
         get_url(myconn, myurl.strip())
-        mycat = make_pretty(myconn.element_result)
-        outfile.write("%s,%s\n" % (myurl.strip(), mycat))
+        local_cat, cloud_cat = make_pretty(myconn.element_result)
+        outfile.write(f'{myurl.strip()},{local_cat},{cloud_cat}')
         outfile.flush()
 
     # Close the input file
