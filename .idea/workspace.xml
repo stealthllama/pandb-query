@@ -42,6 +42,9 @@
       <setting name="OPEN_NEW_TAB" value="true" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
@@ -54,6 +57,7 @@
     <option name="width" value="1440" />
     <option name="height" value="818" />
   </component>
+  <component name="ProjectId" id="1aft9FYHmV0RcJ8hRJKjXSZ4LCR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
@@ -104,15 +108,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PanPolicyParser" />
-  </component>
-  <component name="RunManager">
-    <list size="0" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.splitter.main.proportions" value="0.3" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -166,6 +169,16 @@
       <TodoPanelSettings />
     </option>
   </component>
+  <component name="WindowStateProjectService">
+    <state x="652" y="134" key="CommitChangelistDialog2" timestamp="1587138361010">
+      <screen x="74" y="0" width="1846" height="1080" />
+    </state>
+    <state x="652" y="134" key="CommitChangelistDialog2/74.0.1846.1080@74.0.1846.1080" timestamp="1587138361010" />
+    <state x="589" y="273" key="Vcs.Push.Dialog.v2" timestamp="1587138383928">
+      <screen x="74" y="0" width="1846" height="1080" />
+    </state>
+    <state x="589" y="273" key="Vcs.Push.Dialog.v2/74.0.1846.1080@74.0.1846.1080" timestamp="1587138383928" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
@@ -182,4 +195,3 @@
     </entry>
   </component>
 </project>
-
