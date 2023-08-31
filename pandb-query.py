@@ -1,4 +1,5 @@
 import argparse
+import getpass
 from pan.xapi import *
 
 
@@ -177,10 +178,10 @@ def main(**kwargs):
 # Enables script to be run as a traditional script rather than the command line
 if __name__ == '__main__':
     args = make_parser()
-    if args == '':
+    if not len(sys.argv) > 1:
         hostname = input('Enter the IP of the firewall: ')
         username = input('Enter the username: ')
-        password = input('Enter the password: ')
+        password = getpass.getpass()
         file_in = input('Enter the text file with URLs: ')
         main(firewall=hostname, username=username, password=password, infile=file_in, outfile='results.csv')
     else:
